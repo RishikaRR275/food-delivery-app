@@ -1,6 +1,6 @@
 import React from 'react'
 import TextField from '@material-ui/core/TextField'
-import { Button, Grid } from '@material-ui/core';
+import { Button, } from '@material-ui/core';
 import { connect } from 'react-redux';
 import login from '../Actions/login'
 
@@ -21,8 +21,8 @@ class LoginForm extends React.Component {
 	handleOTPChange = (evt) => {
 		this.setState({ otp: evt.target.value });
 	}
-	handleLogin = (evt)=>{
-		this.setState({otpFieldType:""});
+	handleLogin = (evt) => {
+		this.setState({ otpFieldType: "" });
 	}
 
 	render() {
@@ -58,7 +58,7 @@ class LoginForm extends React.Component {
 				<br />
 				<Button
 					variant="outlined"
-					onClick = {this.handleLogin}
+					onClick={this.handleLogin}
 				>
 					Login
 				</Button>
@@ -68,4 +68,4 @@ class LoginForm extends React.Component {
 	}
 }
 
-export default connect(null, {login})(LoginForm)
+export default connect(null, { login })(LoginForm);
