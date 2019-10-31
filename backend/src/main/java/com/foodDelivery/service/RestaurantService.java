@@ -24,6 +24,7 @@ public class RestaurantService implements IRestaurantService {
 			RestaurantImage.getInputStream().read(arrayPic);
 			Restaurant restaurant = new Restaurant(file.getName().substring(0, file.getName().length() - 5), 4.0f,
 					arrayPic);
+			System.out.println();
 			restaurantRepo.save(restaurant);
 
 		}
@@ -32,6 +33,12 @@ public class RestaurantService implements IRestaurantService {
 	@Override
 	public List<Restaurant> getRestaurants() {
 		// TODO Auto-generated method stub
+//		try {
+//			setRestaurants();
+//		} catch (IOException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		return restaurantRepo.findAll();
 	}
 

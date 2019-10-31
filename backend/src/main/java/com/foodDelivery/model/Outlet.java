@@ -32,8 +32,10 @@ public class Outlet {
 	@JoinColumn(name = "address_id")
 	private OutletAddress address;
 
-	public Outlet(Float rating) {
+	public Outlet(Float rating, Restaurant restaurant, OutletAddress address) {
 		super();
 		this.rating = rating;
+		this.restaurant = restaurant;
+		this.address = address;
 	}
 }

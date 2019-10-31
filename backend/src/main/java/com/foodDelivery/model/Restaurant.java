@@ -27,6 +27,7 @@ public class Restaurant {
 	@Column(name = "pic")
 	private byte[] pic;
 
+	//public Restaurant() {}
 	public Restaurant(String name, Float rating, byte[] pic) {
 		super();
 		this.name = name;
