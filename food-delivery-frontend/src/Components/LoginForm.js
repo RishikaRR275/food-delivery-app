@@ -1,6 +1,6 @@
 import React from 'react'
 import TextField from '@material-ui/core/TextField'
-import { Button, } from '@material-ui/core';
+import { Button, Grid, } from '@material-ui/core';
 import { connect } from 'react-redux';
 import login from '../Actions/login'
 
@@ -28,6 +28,11 @@ class LoginForm extends React.Component {
 	render() {
 		return (
 			<div>
+				<Grid
+				container
+				direction = "column"
+
+				>
 				<TextField
 					id="contact"
 					label="Contact"
@@ -38,9 +43,6 @@ class LoginForm extends React.Component {
 					value={this.state.contact}
 					onChange={this.handleContactChange}
 				/>
-
-				<br />
-
 
 				<TextField
 					type={this.state.otpFieldType}
@@ -54,14 +56,13 @@ class LoginForm extends React.Component {
 					onChange={this.handleOTPChange}
 				/>
 
-
-				<br />
 				<Button
 					variant="outlined"
 					onClick={this.handleLogin}
 				>
 					Login
 				</Button>
+				</Grid>
 
 			</div>
 		)

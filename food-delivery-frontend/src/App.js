@@ -1,5 +1,5 @@
 import React from 'react';
-// import './App.css';
+ import './App.css';
 import HomePage from './Components/HomePage';
 
 function App() {
@@ -9,5 +9,7 @@ function App() {
     </div>
   );
 }
+
+
 
 export default App;
