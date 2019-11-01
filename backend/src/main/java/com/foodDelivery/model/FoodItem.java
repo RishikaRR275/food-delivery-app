@@ -10,6 +10,8 @@ import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -19,6 +21,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @NoArgsConstructor
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class FoodItem {
 	@GeneratedValue
 	@Id
@@ -36,6 +39,9 @@ public class FoodItem {
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "outlet_id")
 	Outlet outlet;
+
+//	public FoodItem() {
+//	}
 
 	public FoodItem(String name, Integer price, String category, Outlet outlet, byte[] pic) {
 		super();

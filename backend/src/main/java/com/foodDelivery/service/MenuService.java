@@ -25,9 +25,10 @@ public class MenuService implements IMenuService {
 		// TODO Auto-generated method stub
 		List<Outlet> outlets = outletRepo.findAll();
 		for (int i = 0; i < outlets.size(); i++) {
-			File[] files = new File("./src/main/resources/image/" + outlets.get(i)).listFiles();
+			System.out.println(outlets.get(i).getRestaurant().getName());
+			File[] files = new File("./src/main/resources/image/" + outlets.get(i).getRestaurant().getName()).listFiles();
 			for (File image : files) {
-				ClassPathResource img = new ClassPathResource("image/" + outlets.get(i) + "/" + image.getName());
+				ClassPathResource img = new ClassPathResource("image/" + outlets.get(i).getRestaurant().getName() + "/" + image.getName());
 				byte[] arrayPic = new byte[(int) img.contentLength()];
 				img.getInputStream().read(arrayPic);
 				FoodItem item = new FoodItem(image.getName().substring(0, image.getName().length() - 5), 220, "deserts",
@@ -43,4 +44,8 @@ public class MenuService implements IMenuService {
 		return menuRepo.findAll();
 	}
 
+	@Override
+	public List<FoodItem> getMenuByOutlet(Integer outlet) {
+		return menuRepo.getMenuByOutlet(outlet);
+	}
 }

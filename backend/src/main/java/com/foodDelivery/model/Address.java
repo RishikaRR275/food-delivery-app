@@ -25,4 +25,5 @@ public class Address {
 	protected Integer pinCode;
 	@Column(name = "city")
 	protected String city;
+
 }

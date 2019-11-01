@@ -1,6 +1,10 @@
 package com.foodDelivery.controller;
 
+import java.sql.SQLOutput;
 import java.util.List;
+
+import com.foodDelivery.model.Outlet;
+import com.foodDelivery.service.IOutletService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,9 +20,16 @@ import com.foodDelivery.service.IMenuService;
 public class MenuController {
 	@Autowired
 	IMenuService menuService;
+	@Autowired
+	IOutletService outletService;
 
-	@GetMapping("/{restaurant}")
-	public List<FoodItem> getMenu(@PathVariable String restaurant) {
-		return menuService.getMenu();
+	@GetMapping("/{restaurantId}")
+	public List<FoodItem> getMenu(@PathVariable Integer restaurantId) {
+		List<Outlet> outlets=outletService.getOutletsByRestaurant(restaurantId);
+		if(outlets.size()>0) {
+			System.out.println(outlets.get(0).getId());
+			return menuService.getMenuByOutlet(outlets.get(0).getId());
+		}
+		else return null;
 	}
 }

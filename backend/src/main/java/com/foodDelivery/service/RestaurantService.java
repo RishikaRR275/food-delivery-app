@@ -22,7 +22,7 @@ public class RestaurantService implements IRestaurantService {
 			ClassPathResource RestaurantImage = new ClassPathResource("image/restaurants/" + file.getName());
 			byte[] arrayPic = new byte[(int) RestaurantImage.contentLength()];
 			RestaurantImage.getInputStream().read(arrayPic);
-			Restaurant restaurant = new Restaurant(file.getName().substring(0, file.getName().length() - 5), 4.0f,
+			Restaurant restaurant = new Restaurant(file.getName().substring(0, file.getName().length() - 5),
 					arrayPic);
 			System.out.println();
 			restaurantRepo.save(restaurant);
