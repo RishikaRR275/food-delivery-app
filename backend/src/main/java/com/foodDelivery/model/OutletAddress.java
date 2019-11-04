@@ -3,7 +3,6 @@ package com.foodDelivery.model;
 import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.criteria.CriteriaBuilder;
-
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

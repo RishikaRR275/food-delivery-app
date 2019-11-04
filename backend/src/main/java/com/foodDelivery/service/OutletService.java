@@ -9,9 +9,12 @@ import com.foodDelivery.model.OutletAddress;
 import com.foodDelivery.model.Restaurant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.util.List;
 
 @Service
+@Transactional
 public class OutletService implements IOutletService {
 
     @Autowired
@@ -27,13 +30,11 @@ public class OutletService implements IOutletService {
 
     @Override
     public List<Outlet> getOutletsByRestaurant(Integer restaurantId) {
-       // setOutlets();
         return outletRepo.getOutletsByRestaurant(restaurantId);
     }
 
     @Override
     public void setOutlets() {
-        System.out.println("aa");
         List<Restaurant> restaurants=restaurantRepo.findAll();
         for (Restaurant restaurant:restaurants){
             OutletAddress address=new OutletAddress(4,"himayat nagar",500029,"hyderabad");

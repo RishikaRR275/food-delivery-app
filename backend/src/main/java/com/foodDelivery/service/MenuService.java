@@ -12,8 +12,10 @@ import com.foodDelivery.dao.RestaurantRepo;
 import com.foodDelivery.model.FoodItem;
 import com.foodDelivery.model.Outlet;
 import com.foodDelivery.model.Restaurant;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
+@Transactional
 public class MenuService implements IMenuService {
 	@Autowired
 	FoodItemRepo menuRepo;

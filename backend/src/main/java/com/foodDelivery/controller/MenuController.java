@@ -2,7 +2,6 @@ package com.foodDelivery.controller;
 
 import java.sql.SQLOutput;
 import java.util.List;
-
 import com.foodDelivery.model.Outlet;
 import com.foodDelivery.service.IOutletService;
 import org.springframework.beans.factory.annotation.Autowired;
