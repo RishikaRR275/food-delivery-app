@@ -25,7 +25,6 @@ public class MenuService implements IMenuService {
 		// TODO Auto-generated method stub
 		List<Outlet> outlets = outletRepo.findAll();
 		for (int i = 0; i < outlets.size(); i++) {
-			System.out.println(outlets.get(i).getRestaurant().getName());
 			File[] files = new File("./src/main/resources/image/" + outlets.get(i).getRestaurant().getName()).listFiles();
 			for (File image : files) {
 				ClassPathResource img = new ClassPathResource("image/" + outlets.get(i).getRestaurant().getName() + "/" + image.getName());

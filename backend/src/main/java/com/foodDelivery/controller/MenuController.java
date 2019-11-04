@@ -26,8 +26,7 @@ public class MenuController {
 	@GetMapping("/{restaurantId}")
 	public List<FoodItem> getMenu(@PathVariable Integer restaurantId) {
 		List<Outlet> outlets=outletService.getOutletsByRestaurant(restaurantId);
-		if(outlets.size()>0) {
-			System.out.println(outlets.get(0).getId());
+		if(outlets.size()>0){
 			return menuService.getMenuByOutlet(outlets.get(0).getId());
 		}
 		else return null;
