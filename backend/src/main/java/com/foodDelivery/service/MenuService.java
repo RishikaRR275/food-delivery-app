@@ -24,7 +24,6 @@ public class MenuService implements IMenuService {
 
 	@Override
 	public void setMenu() throws IOException {
-		// TODO Auto-generated method stub
 		List<Outlet> outlets = outletRepo.findAll();
 		for (int i = 0; i < outlets.size(); i++) {
 			File[] files = new File("./src/main/resources/image/" + outlets.get(i).getRestaurant().getName()).listFiles();
@@ -41,7 +40,6 @@ public class MenuService implements IMenuService {
 
 	@Override
 	public List<FoodItem> getMenu() {
-		// TODO Auto-generated method stub
 		return menuRepo.findAll();
 	}
 
