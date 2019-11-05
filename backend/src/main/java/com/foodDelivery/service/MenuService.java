@@ -39,11 +39,6 @@ public class MenuService implements IMenuService {
 	}
 
 	@Override
-	public List<FoodItem> getMenu() {
-		return menuRepo.findAll();
-	}
-
-	@Override
 	public List<FoodItem> getMenuByOutlet(Integer outlet) {
 		return menuRepo.getMenuByOutlet(outlet);
 	}

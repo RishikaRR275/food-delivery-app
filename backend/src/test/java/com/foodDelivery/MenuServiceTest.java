@@ -7,9 +7,7 @@ import com.foodDelivery.model.Outlet;
 import com.foodDelivery.model.OutletAddress;
 import com.foodDelivery.model.Restaurant;
 import com.foodDelivery.service.IMenuService;
-import com.foodDelivery.service.IRestaurantService;
 import com.foodDelivery.service.MenuService;
-import com.foodDelivery.service.RestaurantService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -69,7 +67,7 @@ public class MenuServiceTest {
         Mockito.when(menuRepo.getMenuByOutlet(outlet.getId())).thenReturn(menu);
     }
     @Test
-    public void whenValidOutletId_thenMenuShouldbeFound(){
+    public void whenValidFoodItems_thenMenuShouldbeFound(){
         List<String> foodItems=new ArrayList<>();
         foodItems.add("Brownie Break");
         foodItems.add("Chocoholics");
@@ -77,7 +75,7 @@ public class MenuServiceTest {
         foodItems.add("Devils Brownie");
         foodItems.add("Ferrero Rocher");
         foodItems.add("Willy Wonka");
-        List<FoodItem> menu=menuRepo.getMenuByOutlet(1);
+        List<FoodItem> menu=menuService.getMenuByOutlet(1);
         assertThat(menu).isNotEmpty();
         for(FoodItem item:menu)
             assertThat(item.getName()).isIn(foodItems);

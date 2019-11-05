@@ -48,7 +48,7 @@ public class RestaurantServiceTest {
     @Test
     public void whenValidRestaurantName_thenRestaurantShouldbeFound(){
         String name="cream stone";
-        List<Restaurant> restaurants=restaurantRepo.findAll();
+        List<Restaurant> restaurants=restaurantService.getRestaurants();
         assertThat(restaurants).isNotEmpty();
         assertThat(restaurants.get(0).getName()).isEqualTo(name);
     }
