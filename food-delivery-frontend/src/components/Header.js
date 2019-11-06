@@ -20,37 +20,30 @@ class Header extends React.Component {
 						<Grid
 							container
 							direction="row"
-							justify="flex-end">
+							justify="flex-end"
+						>
 							<Button
 								color="inherit"
 								variant="outlined"
-								// className="float-right"
 								style={{
 									align: "right",
 									color: "black",
+									marginRight: "10px",
 									"font-size": "18px",
 									"font-weight": "bold",
-									marginRight: "10px",
 								}}
 							>
 								help
 					        </Button>
 
-							{/* <Button
-								color="inherit"
-								variant="outlined"
-								// className="float-right"
-								style={{
-									align: "right",
-									color: "black",
-									"font-size": "18px",
-									"font-weight": "bold",
-									marginRight: "10px",
-								}}
-							>
-								Sign In
-							</Button> */}
-							<LoginModal/>
+							<LoginModal sendLoginOtp={this.props.sendLoginOtp}
+								authCustomer={this.props.authCustomer}
+								customerReg = {this.props.customerReg}
+								switchToSignUpForm = {this.props.switchToSignUpForm}
+								switchToLoginForm = {this.props.switchToLoginForm}
+								status = {this.props.status}
+								displayingForm={this.props.displayingForm}
+							/>
 						</Grid>
 					</Toolbar>
 				</AppBar>
