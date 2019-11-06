@@ -28,15 +28,19 @@ public class Customer {
 	
 	@Column(name = "contact")
 	private String contact;
+	
+	@Column(name = "password")
+	private String password;
 		
 	@Column(name = "otp")
 	private Integer otp;
 
-	public Customer(String name, String email, String contact) {
+	public Customer(String name, String email, String contact, String password) {
 		super();
 		this.name = name;
 		this.email = email;
 		this.contact = contact;
+		this.password = password;
 	}
 
 }

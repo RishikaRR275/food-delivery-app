@@ -8,7 +8,7 @@ const store = createStore(
         loginReducer: loginReducer
     }),
     {},
-    applyMiddleware(thunkMiddleware , logger)
+    applyMiddleware(logger)
 );
 
 export default store;
